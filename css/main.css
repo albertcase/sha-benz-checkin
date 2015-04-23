@@ -69,14 +69,14 @@ body{
     color:    #999;
 }
 .error::-webkit-input-placeholder { 
-    color:    #f00;
+    color:    rgb(129,216,208);
 }
 .error:-moz-placeholder { 
-    color:    #f00;
+    color:    rgb(129,216,208);
 }
 .error::-moz-placeholder { 
-    color:    #f00;
+    color:    rgb(129,216,208);
 }
 .error:-ms-input-placeholder { 
-    color:    #f00;
+    color:    rgb(129,216,208);
 }
