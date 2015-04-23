@@ -5,10 +5,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu12.04-givenchy-beauty"
 
-  config.vm.hostname = "CholeUGC"
+  config.vm.hostname = "BenzCheckin"
 
-  config.vm.network :forwarded_port, guest: 80, host: 9010
-  config.vm.network :forwarded_port, guest: 3306, host: 33090
+  config.vm.network :forwarded_port, guest: 80, host: 9013
+  config.vm.network :forwarded_port, guest: 3306, host: 33093
 
   config.ssh.username = "vagrant"
   config.ssh.password = "vagrant"
