@@ -40,6 +40,7 @@ $rs = $db->getAll($sql,true);
        
             	<input type="text" name="content" id="content" placeholder="你想找什么你告诉我吖" value=""/>
             	<input type="button" value="Search"  class="search_btn" />
+            	
        		</div>	
 
 			<table id="example" class="display dataTable no-footer" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%; margin-bottom:30px">

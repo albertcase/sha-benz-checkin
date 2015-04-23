@@ -1,5 +1,6 @@
 body{
-	background-color: rgb(129,216,208);
+	background-color: #000;
+	font-family: "Microsoft YaHei";
 }
 .info{
 	
@@ -7,10 +8,11 @@ body{
 	margin:300px auto ;
 	width: 200px;
 	height: 200px;
-	background-color: rgba(255,255,255,0.5);
 	border-radius: 10px;
 	-webkit-border-radius:10px;
 	-moz-border-radius: 10px;
+	background: rgba(255,255,255,1) url(../images/logo.jpg) no-repeat center 10px;
+	background-size: 50%;
 
 }
 #file{
@@ -21,10 +23,10 @@ body{
 	border:none;
 	display: inline-block;
 	position: relative;
-	margin:18% 12%;
+	margin:48% 12% 10% 12%;
 	text-align: center;
 	font-size: 18px;
-	color:rgb(129,216,208);
+	color:#000;
 
 }
 .submit_btn{
@@ -32,9 +34,9 @@ body{
 	display: inline-block;
 	position: relative;
 	margin:0 0 20px 50px;
-	background-color: rgb(129,216,208);
+	background-color: #000;
 	border-radius: 5px;
-	border:1px solid rgb(129,216,208);
+	border:1px solid #000;
 	padding:4px;
 	color:#999;
 	font-size: 14px;
@@ -69,19 +71,26 @@ body{
     color:    #999;
 }
 .error::-webkit-input-placeholder { 
-    color:    rgb(129,216,208);
+    color:    #f00;
 }
 .error:-moz-placeholder { 
-    color:    rgb(129,216,208);
+    color:    #f00;
 }
 .error::-moz-placeholder { 
-    color:    rgb(129,216,208);
+    color:    #f00;
 }
 .error:-ms-input-placeholder { 
-    color:    rgb(129,216,208);
+    color:    #f00;
 }
 
 .search{
 	text-align: right;
 	margin: -20px 0 20px 0;
+}
+.error_con{
+	text-align: center;
+	font-size: 14px;
+	color:#fff;
+	font-family: "Microsoft YaHei";
+
 }

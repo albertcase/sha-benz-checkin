@@ -15,7 +15,19 @@
                 "data":{"model":"search","cardnum":file},
                 "dataType":"json",
                 "success":function(data){
-                    alert(data.msg);
+                    if(data.code==1){
+                        $(".error_con").html("签到成功");
+                    }
+                    if(data.code==2){
+                        $(".error_con").html("请填写必填项");
+                    }
+                    if(data.code==3){
+                        $(".error_con").html("找不到该用户");
+                    }
+                    if(data.code==4){
+                        $(".error_con").html("该用户已经签过到了");
+                    }
+                    /*alert(data.msg);*/
                 }
             });
         });
