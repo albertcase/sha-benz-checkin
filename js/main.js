@@ -27,7 +27,11 @@
         });
         $(".view_btn").on("click",function(){
         	window.location.href="view.php";
-        })  
+        });
+        $(".search_btn").on("click",function(){
+            window.location.href="view.php?cardnum="+$("#content").val();
+            
+        });
   
     })
 })(jQuery)
