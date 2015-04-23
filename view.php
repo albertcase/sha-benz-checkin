@@ -33,13 +33,19 @@ $rs = $db->getAll($sql,true);
 		<section>
 
 			<h1 style="margin-bottom:50px; text-align:center">Benz</h1>
-			<center><?php echo $page->show(5);?></center> 
+			
+            
+       		<div class="search">
+       
+            	<input type="text" name="content" id="content" placeholder="你想找什么你告诉我吖" value=""/>
+            	<input type="button" value="Search" class="search_btn" />
+       		</div>	
 
-			<table id="example" class="display dataTable no-footer" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+			<table id="example" class="display dataTable no-footer" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%; margin-bottom:30px">
 				<thead>
 				<tr role="row">
 					<th>ID</th>
-					<th>CardNum</th>
+					<th>CARD-NUM</th>
 					<th>STATUS</th>
 					<th>CREATE-AT</th>
 				</tr>
@@ -56,12 +62,16 @@ $rs = $db->getAll($sql,true);
 				<td align="center"><?php if($rs[$i]['status']==1){ echo '<img src="images/clicked.png" width="15px" height="15px"/>'; } else{echo '<img src="images/unclicked.png" width="15px" height="15px"/>';} ?></td>
 				<td align="center"><?php echo $rs[$i]['createtime']; ?></td>
 				</tr>
+
 				<?php     
 				}
 				?> 
 
 				</tbody>
+
 			</table>
+
+			<center><?php echo $page->show(5);?></center> 
 
 		</section>
 	</div>

@@ -80,3 +80,8 @@ body{
 .error:-ms-input-placeholder { 
     color:    rgb(129,216,208);
 }
+
+.search{
+	text-align: right;
+	margin: -20px 0 20px 0;
+}
