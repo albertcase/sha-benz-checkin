@@ -26,14 +26,14 @@ $rs = $db->getAll($sql,true);
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
-<title>Benz</title>
+<title>Mercedes-Benz</title>
 </head>
 
 <body>
 	<div class="container">
 		<section>
 
-			<h1 style="margin-bottom:50px; text-align:center">Benz</h1>
+			<h1 style="margin-bottom:50px; text-align:center">Mercedes-Benz</h1>
 			
             
        		<div class="search">
@@ -77,6 +77,7 @@ $rs = $db->getAll($sql,true);
 			</table>
 
 			<center><?php echo $page->show(5);?></center> 
+			<strong>Total : <?php echo $rowcount;?></strong> 
 
 		</section>
 	</div>
