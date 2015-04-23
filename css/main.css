@@ -36,7 +36,7 @@ body{
 	border-radius: 5px;
 	border:1px solid rgb(129,216,208);
 	padding:4px;
-	color:grey;
+	color:#999;
 	font-size: 14px;
 
 
@@ -52,8 +52,31 @@ body{
 	border-radius: 5px;
 	border:1px solid rgb(129,216,208);
 	padding:4px;
-	color:grey;
+	color:#999;
 	font-size: 14px;
 
-
+}
+::-webkit-input-placeholder { 
+    color:    #999;
+}
+:-moz-placeholder { 
+    color:    #999;
+}
+::-moz-placeholder { 
+    color:    #999;
+}
+:-ms-input-placeholder { 
+    color:    #999;
+}
+.error::-webkit-input-placeholder { 
+    color:    #f00;
+}
+.error:-moz-placeholder { 
+    color:    #f00;
+}
+.error::-moz-placeholder { 
+    color:    #f00;
+}
+.error:-ms-input-placeholder { 
+    color:    #f00;
 }
