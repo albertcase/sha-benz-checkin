@@ -40,7 +40,7 @@ $rs = $db->getAll($sql,true);
 
 			<h1 style="margin-bottom:50px; text-align:center">Mercedes-Benz</h1>
 			
-            
+            <strong class="total">Total : <?php echo $rowcount;?></strong>
        		<div class="search">
        
             	<input type="text" name="content" id="content" placeholder="你想找什么你告诉我吖" value=""/>

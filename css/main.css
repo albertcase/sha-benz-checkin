@@ -1,6 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:100);
+
 body{
 	background-color: #000;
-	font-family: "Microsoft YaHei";
+	font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    
 }
 .info{
 	
@@ -84,11 +87,17 @@ body{
 	text-align: right;
 	margin: -20px 0 20px 0;
 }
+
+.total{
+	text-align: left;
+	font-size:20px;
+	text-shadow: 2px 1px #999;
+}
 .error_con{
 	text-align: center;
 	font-size: 14px;
 	color:#fff;
-	font-family: "Microsoft YaHei";
+	
 
 }
 
@@ -113,7 +122,7 @@ body{
 .con p{
 	font-size: 18px;
 	position: relative;
-	padding-top: 15px;
+	padding-top: 20px;
 	text-align: center;
 }
 .one p{
