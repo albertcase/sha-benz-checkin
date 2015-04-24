@@ -8,7 +8,10 @@ include_once('./config/database.php');
 include_once('./config/Pdb.php');
 include_once('./config/Pager.class.php');
 $db = Pdb::getDb();
-$where=isset($_GET['cardnum'])?" and cardnum like '%".$_GET['cardnum']."%'":"";
+$cardnum = isset($_GET['cardnum']) ? $_GET['cardnum'] : "";
+$where = isset($_GET['cardnum']) ? " and cardnum like '%" . $_GET['cardnum'] . "%'" : "";
+$status = isset($_GET['status']) ? $_GET['status'] : "";
+$where .= isset($_GET['status']) ? " and status like '%" . $_GET['status'] . "%'" : "";
 $rowcount = $db->getOne("SELECT count(*) as num FROM user where 1 $where");
 
 $nowindex = 1;
@@ -42,8 +45,12 @@ $rs = $db->getAll($sql,true);
 			
             <strong class="total">Total : <?php echo $rowcount;?></strong>
        		<div class="search">
-       
-            	<input type="text" name="content" id="content" placeholder="你想找什么你告诉我吖" value=""/>
+       			<select id="status" value="<?php echo $status;?>">
+	       			<option value="">选择状态</option>
+	       			<option value="0" <?php if($status==='0') echo 'selected=selected'?>>未签到</option>
+	       			<option value="1" <?php if($status==='1') echo 'selected=selected'?>>已签到</option>
+       			</select>
+            	<input type="text" name="content" id="content" placeholder="你想找什么你告诉我吖" value="<?php echo $cardnum;?>"/>
             	<input type="button" value="Search"  class="search_btn" />
             	
        		</div>	

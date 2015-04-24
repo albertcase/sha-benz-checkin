@@ -5,30 +5,27 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-
+<script>
+function submitForm(){
+	if(window.event.keyCode == 13) 
+	{ 
+		$('.submit_btn').click(); 
+	} 
+}
+</script>
 <title>Mercedes-Benz</title>
 </head>
 
-<body>
+<body onkeyup="submitForm()">
     <div class="info">
         <input type="text" name="file" id="file" placeholder="请输入您的姓名" value=""/>
         <input type="button" value="Check In" class="submit_btn" />
         <!-- <input type="button" value="View" class="view_btn" /> -->    
     </div>
     <div class="tips_content">
-	    <div class="tips one">
+	    <div class="tips">
 	        <div class="con">
-	            <p>签到成功</p>
-	        </div>                 
-	    </div>
-	    <div class="tips two">
-	        <div class="con">
-	            <p>找不到该用户</p>
-	        </div>                 
-	    </div>
-	    <div class="tips three">
-	        <div class="con">
-	            <p>该用户已经签过到了</p>
+	            <p id="msg">签到成功</p>
 	        </div>                 
 	    </div>
 	</div>    

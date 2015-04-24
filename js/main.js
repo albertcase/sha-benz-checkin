@@ -16,17 +16,17 @@
                 "dataType":"json",
                 "success":function(data){
                     if(data.code==1){
-                        $(".one").slideDown("fast").fadeOut(5000);
-                        
+                        $("#msg").html("签到成功")
+                        $("#msg").css("color","#00cc99");
+                        $(".tips").slideDown("fast").fadeOut(5000);
+                        $("#file").val("");
+                    }else{
+                        $("#msg").html(data.msg)
+                        $("#msg").css("color","#f00000");
+                        $(".tips").slideDown("fast").fadeOut(5000);
+                        $("#file").val("");
                     }
-                    if(data.code==3){
-                        $(".two").slideDown("fast").fadeOut(5000);
-                        
-                    }
-                    if(data.code==4){
-                        $(".three").slideDown("fast").fadeOut(5000);
-                        
-                    }
+                    
                     /*alert(data.msg);*/
                 }
             });
@@ -42,7 +42,7 @@
         });*/
         $(".search_btn").on("click",function(){
         	
-            window.location.href="view.php?cardnum="+$("#content").val();
+            window.location.href="view.php?cardnum="+$("#content").val()+"&status="+$("#status").val();
             
         });
         
