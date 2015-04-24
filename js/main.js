@@ -16,16 +16,13 @@
                 "dataType":"json",
                 "success":function(data){
                     if(data.code==1){
-                        $(".error_con").html("签到成功");
-                    }
-                    if(data.code==2){
-                        $(".error_con").html("请填写必填项");
+                        $(".one").fadeIn();
                     }
                     if(data.code==3){
-                        $(".error_con").html("找不到该用户");
+                        $(".two").fadeIn();
                     }
                     if(data.code==4){
-                        $(".error_con").html("该用户已经签过到了");
+                        $(".three").fadeIn();
                     }
                     /*alert(data.msg);*/
                 }
@@ -43,6 +40,24 @@
         $(".search_btn").on("click",function(){
         	
             window.location.href="view.php?cardnum="+$("#content").val();
+            
+        });
+        $(".one .hideTips").on("click",function(){
+            
+            $(".one").fadeOut();
+            $("#file").val("");
+            
+        });
+        $(".two .hideTips").on("click",function(){
+            
+            $(".two").fadeOut();
+            $("#file").val("");
+            
+        });
+        $(".three .hideTips").on("click",function(){
+            
+            $(".three").fadeOut();
+            $("#file").val("");
             
         });
   

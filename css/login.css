@@ -58,7 +58,7 @@ text-align: center; color:#f8e5c8; overflow:hidden; }
      width:100%; height:50px; line-height:50px; background:rgba(185,74,82,1); position:fixed; left:0; top:-50px; z-index:9; text-align:center; color:#fff; 
 }
 	
-#errorPrompt.success{  background:#f8e5c8; }
+#errorPrompt.success{  background:#ffffff; }
 
 
 #box{ width:900px; display:inline-block; padding:10px 30px; position:relative; background:#fff; }
