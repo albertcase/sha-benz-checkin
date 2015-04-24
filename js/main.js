@@ -16,13 +16,16 @@
                 "dataType":"json",
                 "success":function(data){
                     if(data.code==1){
-                        $(".one").fadeIn();
+                        $(".one").slideDown("fast").fadeOut(5000);
+                        
                     }
                     if(data.code==3){
-                        $(".two").fadeIn();
+                        $(".two").slideDown("fast").fadeOut(5000);
+                        
                     }
                     if(data.code==4){
-                        $(".three").fadeIn();
+                        $(".three").slideDown("fast").fadeOut(5000);
+                        
                     }
                     /*alert(data.msg);*/
                 }
@@ -42,24 +45,7 @@
             window.location.href="view.php?cardnum="+$("#content").val();
             
         });
-        $(".one .hideTips").on("click",function(){
-            
-            $(".one").fadeOut();
-            $("#file").val("");
-            
-        });
-        $(".two .hideTips").on("click",function(){
-            
-            $(".two").fadeOut();
-            $("#file").val("");
-            
-        });
-        $(".three .hideTips").on("click",function(){
-            
-            $(".three").fadeOut();
-            $("#file").val("");
-            
-        });
+        
   
     })
 })(jQuery)
