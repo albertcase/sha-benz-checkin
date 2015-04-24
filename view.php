@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['login_user'])){
+	Header('Location:./login.html');
+	exit;
+}
 include_once('./config/database.php');
 include_once('./config/Pdb.php');
 include_once('./config/Pager.class.php');
