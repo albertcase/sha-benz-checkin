@@ -8,7 +8,7 @@ if(isset($_POST['model'])){
 	switch ($_POST['model']) {
 		case 'search':
 			$tag=false;
-			$cardnum=isset($_POST['cardnum'])?substr($_POST['cardnum'],3):$tag=true;
+			$cardnum=isset($_POST['cardnum'])?$_POST['cardnum']:$tag=true;
 			if($tag){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
