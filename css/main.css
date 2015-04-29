@@ -125,3 +125,19 @@ body{
 	padding-top: 20px;
 	text-align: center;
 }
+.admin{
+	position: absolute;
+	right:0;
+	top:0;
+	width:100px;
+	height:30px;
+	background: #fff;
+}
+.admin p{
+	text-align: center;
+	margin: 6px auto;
+	color: #000;
+}
+.admin a{
+	text-decoration: none;
+}
