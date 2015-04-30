@@ -18,20 +18,23 @@ function submitForm(){
 
 <body onkeyup="submitForm()">
     <div class="info">
-        <input type="text" name="file" id="file" placeholder="请输入您的ID号" value=""/>
-        <input type="button" value="Check In" class="submit_btn" />
+    	<p class="num">已签到人数:2121</p>
+        <input type="text" name="file" id="file" placeholder="在此输入编号" value=""/>
+        <p class="hello">您好，LAM</p>
+        <img src="images/btn_info.jpg" class="submit_btn"  >
+        <img src="images/btn_check.jpg" class="check_btn" >
         <!-- <input type="button" value="View" class="view_btn" /> -->    
     </div>
     <div class="tips_content">
 	    <div class="tips">
+	    	<p class="tips_txt">提示</p>
 	        <div class="con">
 	            <p id="msg">签到成功</p>
-	        </div>                 
+	        </div> 
+	        <input type="button" value="确认" class="confirm_btn" />                
 	    </div>
 	</div>
-	<div class="admin">
-		<p><a href="view.php">管理员登陆</p>
-	</div> 
+	
 	<div class="loading">
 		<img src="images/loading.gif" />
 	</div>   

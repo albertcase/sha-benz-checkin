@@ -1,49 +1,61 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:100);
-
 body{
 	background: #000 url(../images/bg.jpg) no-repeat ;
 	background-size: 100%;
-	font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-family: 'SimSun';
     
 }
 .info{
 	
 	position: relative;
-	margin:300px auto ;
-	width: 250px;
-	height: 250px;
-	border-radius: 10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius: 10px;
-	background: rgba(255,255,255,1) url(../images/logo.jpg) no-repeat center 5px;
-	background-size: 70%;
+	margin:25% auto 0 auto;
+	width: 307px;
+	height: 384px;
+	background:url(../images/bg-2.png) no-repeat;
+	background-size: 90%;
+
+}
+.info .num{
+	
+	width:300px;
+	font-family: 'SimSun';
+	color:#fff;
+	font-size: 18px;
+	padding-top:110px;
+	text-align: center;
+
+}
+.hello{
+	font-family: 'SimSun';
+	color:#fff;
+	font-size: 18px;
+	text-align: center;
 
 }
 #file{
-	background:none;
-	border-radius: 5px;
-	width:150px;
-	height:30px;
+	background:rgba(0,0,0,0.5);
+	width:220px;
+	height:34px;
 	border:none;
 	display: inline-block;
 	position: relative;
-	margin:55% 0% 10% 20%;
+	margin:-1% 0% -1% 9%;
 	text-align: center;
 	font-size: 18px;
-	color:#000;
+	color:#fff;
+	padding: 2px;
 
 }
 .submit_btn{
-	width:100px;
+	width:45%;
 	display: inline-block;
 	position: relative;
-	margin:0 0 20px 75px;
-	background-color: #000;
-	border-radius: 5px;
-	border:1px solid #000;
-	padding:4px;
-	color:#999;
-	font-size: 14px;	
+	margin:0 0 10px 70px;
+}
+.check_btn{
+	width:45%;
+	display: inline-block;
+	position: relative;
+	margin:0 0 0px 70px;
 }
 /*.view_btn{
 	width:100px;
@@ -103,15 +115,29 @@ body{
 }
 
 .tips{
-	display: none;
-	background-color: #fff;
-	width: 250px;
-	height:50px;
-	border-bottom-left-radius:5px;
-	border-bottom-right-radius:5px;
+	width:411px;
+	height:174px;
+	display: block;
+	background:url(../images/tips_bg.jpg) no-repeat;
+	background-size: 90%;
 	position: relative;
 	margin:0px auto ;
-	opacity: 0.9;
+	
+}
+.tips_txt{
+	font-size: 18px;
+	color:#fff;
+	padding: 6px 0 0 6px;
+}
+.confirm_btn{
+	font-size: 18px;
+	color:#000;
+	border: 1px solid #000;
+	width:60px;
+	
+	margin: 15px 0px 0px 155px ;
+	
+
 }
 .tips_content{
 	margin:-310px auto ;

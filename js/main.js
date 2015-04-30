@@ -47,6 +47,14 @@
             window.location.href="view.php?cardnum="+$("#content").val()+"&status="+$("#status").val();
             
         });
+        $(".check_btn").on("click",function(){
+            
+            window.location.href="view.php";
+            
+        });
+        $(".confirm_btn").on("click",function(){
+            $(".tips").hide();
+        })
         
   
     })
