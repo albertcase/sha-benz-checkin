@@ -2,19 +2,21 @@
     $(function(){
      
    		$(".submit_btn").on("click", function(){
+
            
             var file=$("#file").val();
             if(file==""||file=="请输入您的姓名"){
                 $("#file").val("").addClass("error");
                	return false;   	
             }
-
+            $("#loading").show();
             $.ajax({
                 "url":"./Request.php",
                 "type":"post",
                 "data":{"model":"search","cardnum":file},
                 "dataType":"json",
                 "success":function(data){
+                    $("#loading").hide();
                     if(data.code==1){
                         $("#msg").html("签到成功")
                         $("#msg").css("color","#00cc99");
