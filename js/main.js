@@ -1,6 +1,6 @@
 ;(function($){
     $(function(){
-     
+        LoadCount();
    		$(".submit_btn").on("click", function(){
 
            
@@ -20,12 +20,15 @@
                     if(data.code==1){
                         $("#msg").html("签到成功")
                         $("#msg").css("color","#00cc99");
-                        $(".tips").slideDown("fast").fadeOut(5000);
+                        $(".hello").html("您好，"+data.msg);
+                        $(".tips").show();
                         $("#file").val("");
+                        LoadCount();
                     }else{
                         $("#msg").html(data.msg)
                         $("#msg").css("color","#f00000");
-                        $(".tips").slideDown("fast").fadeOut(5000);
+                        $(".hello").html('');
+                        $(".tips").show();
                         $("#file").val("");
                     }
                     
@@ -59,3 +62,17 @@
   
     })
 })(jQuery)
+
+
+function LoadCount(){
+    $.ajax({
+        "url":"./Request.php",
+        "type":"post",
+        "data":{"model":"count"},
+        "dataType":"json",
+        "success":function(data){
+            $("#count").html(data.msg)
+        
+        }
+    });
+}

@@ -29,6 +29,7 @@ body{
 	color:#fff;
 	font-size: 18px;
 	text-align: center;
+	height:20px;
 
 }
 #file{
@@ -122,6 +123,7 @@ body{
 	background-size: 90%;
 	position: relative;
 	margin:0px auto ;
+	display: none;
 	
 }
 .tips_txt{
