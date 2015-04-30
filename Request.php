@@ -24,16 +24,20 @@ if(isset($_POST['model'])){
 				exit;
 			}
 			$sql="update  user set status=1 where id=".$db->quote($rs['id']);
-			$rs=$db->execute($sql);
-			print json_encode(array("code"=>1,"msg"=>"成功"));
+			$db->execute($sql);
+			print json_encode(array("code"=>1,"msg"=>$rs['name']));
 			exit;
 			break;
-		case 'list':
-			$tag=false;
-			$where=isset($_POST['cardnum'])?" and cardnum like '%".$_POST['cardnum']."%'":"";
-			$sql="select * from  user  where 1 $where";
-			$rs=$db->getAll($sql,true);
+		case 'count':
+			$sql="select count(*) from  user  where  status=1";
+			$rs=$db->getOne($sql);
 			print json_encode(array("code"=>1,"msg"=>$rs));
+			exit;
+			break;
+		case 'reset':
+			$sql="update  user set status=0";
+			$db->execute($sql);
+			print json_encode(array("code"=>1,"msg"=>'清空完成'));
 			exit;
 			break;
 		case 'test':
