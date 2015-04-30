@@ -19,14 +19,14 @@
                     $(".loading").hide();
                     if(data.code==1){
                         $("#msg").html("签到成功")
-                        $("#msg").css("color","#00cc99");
+                        $("#msg").css("color","#000");
                         $(".hello").html("您好，"+data.msg);
                         $(".tips").show();
                         $("#file").val("");
                         LoadCount();
                     }else{
                         $("#msg").html(data.msg)
-                        $("#msg").css("color","#f00000");
+                        $("#msg").css("color","#000");
                         $(".hello").html('');
                         $(".tips").show();
                         $("#file").val("");
