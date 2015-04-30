@@ -70,7 +70,7 @@ $rs = $db->getAll($sql,true);
 				        
 				<?php
 				if(count($rs)==0){
-					echo '<tr  role="row" class="even"><td align="center" colspan=4>暂无数据</td></tr>';
+					echo '<tr  role="row" class="even"><td align="center" colspan=5>暂无数据</td></tr>';
 				}else{
 					for($i=0;$i<count($rs);$i++){
 				?>
