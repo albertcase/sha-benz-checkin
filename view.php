@@ -9,7 +9,7 @@ include_once('./config/Pdb.php');
 include_once('./config/Pager.class.php');
 $db = Pdb::getDb();
 $cardnum = isset($_GET['cardnum']) ? $_GET['cardnum'] : "";
-$where = isset($_GET['cardnum']) ? " and cardnum like '%" . $_GET['cardnum'] . "%'" : "";
+$where = isset($_GET['cardnum']) ? " and (cardnum like '%" . $_GET['cardnum'] . "%' or name like '%" . $_GET['cardnum'] . "%')" : "";
 $status = isset($_GET['status']) ? $_GET['status'] : "";
 $where .= isset($_GET['status']) ? " and status like '%" . $_GET['status'] . "%'" : "";
 $rowcount = $db->getOne("SELECT count(*) as num FROM user where 1 $where");
