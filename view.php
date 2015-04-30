@@ -59,6 +59,7 @@ $rs = $db->getAll($sql,true);
 				<thead>
 				<tr role="row">
 					<th>ID</th>
+					<th>NAME</th>
 					<th>CARD-NUM</th>
 					<th>STATUS</th>
 					<th>CREATE-AT</th>
@@ -75,6 +76,7 @@ $rs = $db->getAll($sql,true);
 				?>
 					<tr  role="row" class="<?php if($i%2==0) echo 'even'; else echo 'odd';?>">
 					<td align="center"><?php echo $rs[$i]['id']; ?></td>
+					<td align="center"><?php echo $rs[$i]['name']; ?></td>
 					<td align="center"><?php echo $rs[$i]['cardnum']; ?></td>
 					<td align="center"><?php if($rs[$i]['status']==1){ echo '<img src="images/clicked.png" width="15px" height="15px"/>'; } else{echo '<img src="images/unclicked.png" width="15px" height="15px"/>';} ?></td>
 					<td align="center"><?php echo $rs[$i]['createtime']; ?></td>
