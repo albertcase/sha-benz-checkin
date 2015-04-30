@@ -13,7 +13,7 @@ if(isset($_POST['model'])){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
 			}
-			$sql="select * from  user where cardnum=".$db->quote($cardnum);
+			$sql="select * from  user where cardnum=".$db->quote($cardnum)." or name =".$db->quote($cardnum);
 			$rs=$db->getRow($sql);
 			if(!$rs){
 				print json_encode(array("code"=>3,"msg"=>"找不到该用户"));
