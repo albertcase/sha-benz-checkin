@@ -30,6 +30,7 @@ body{
 	font-size: 18px;
 	text-align: center;
 	height:20px;
+	margin-bottom: 18px;
 
 }
 #file{
@@ -39,7 +40,7 @@ body{
 	border:none;
 	display: inline-block;
 	position: relative;
-	margin:-1% 0% -1% 9%;
+	margin:5% 0% 5% 9%;
 	text-align: center;
 	font-size: 18px;
 	color:#fff;
@@ -125,19 +126,28 @@ body{
 	position: relative;
 	margin:0px auto ;
 	display: none;
+	text-align: center;
 	
 }
 .tips_txt{
 	font-size: 18px;
 	color:#fff;
 	padding: 18px 0 0 10px;
+	text-align: left;
 }
 .confirm_btn{
 	font-size: 18px;
 	color:#000;
 	border: 1px solid #000;
 	width:60px;
-	margin: 20px 0px 0px 170px ;
+	border-radius: none;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	display: inline-block;
+	padding: 4px 0;
+	text-align: center;
+	margin-top: 38px;
+
 	
 
 }
@@ -148,10 +158,10 @@ body{
 	float: right;
 	margin:6px 6px 0 0;
 }
-.con p{
+.con{
 	font-size: 18px;
 	position: relative;
-	padding-top: 8px;
+	margin-top: 24px;
 	text-align: center;
 }
 .admin{
@@ -189,4 +199,8 @@ body{
 #msg{
 	height: 80px;
 	line-height: 24px;
+}
+.space{
+	padding-top: 42px;
+	display: inline-block;
 }
