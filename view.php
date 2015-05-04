@@ -41,7 +41,7 @@ $rs = $db->getAll($sql,true);
 	<div class="container">
 		<section>
 
-			<h1 style="margin-bottom:50px; text-align:center">Mercedes-Benz</h1>
+			<h1 style="margin-bottom:50px; text-align:center ;color:#fff;">Mercedes-Benz</h1>
 			
             <strong class="total">Total : <?php echo $rowcount;?></strong>
        		<div class="search">
@@ -56,7 +56,7 @@ $rs = $db->getAll($sql,true);
        		</div>	
 
 			<table id="example" class="display dataTable no-footer" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%; margin-bottom:30px">
-				<thead>
+				<thead style="color:#fff">
 				<tr role="row">
 					<th>ID</th>
 					<th>NAME</th>
@@ -91,8 +91,8 @@ $rs = $db->getAll($sql,true);
 
 			</table>
 
-			<center><?php echo $page->show(5);?></center> 
-			<strong>Total : <?php echo $rowcount;?></strong> 
+			<center style="color: #fff;"><?php echo $page->show(5);?></center> 
+			<strong style="color: #fff;">Total : <?php echo $rowcount;?></strong> 
 
 		</section>
 	</div>
