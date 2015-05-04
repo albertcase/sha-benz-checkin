@@ -20,7 +20,7 @@
                     if(data.code==1){
                         $("#msg").html("签到成功")
                         $("#msg").css("color","#000");
-                        $(".hello").html("您好，"+data.msg);
+                        $(".hello").html("您好，"+data.msg.name+"\n手机号:"+data.msg.mobile+"\n用户类型:"+data.msg.type);
                         $(".tips").show();
                         $("#file").val("");
                         LoadCount();

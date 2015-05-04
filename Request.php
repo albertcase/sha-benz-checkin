@@ -13,7 +13,7 @@ if(isset($_POST['model'])){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
 			}
-			$sql="select * from  user where cardnum=".$db->quote($cardnum)." or name =".$db->quote($cardnum);
+			$sql="select * from  user where cardnum=".$db->quote($cardnum)." or mobile =".$db->quote($cardnum);
 			$rs=$db->getRow($sql);
 			if(!$rs){
 				print json_encode(array("code"=>3,"msg"=>"找不到该用户"));
@@ -25,7 +25,7 @@ if(isset($_POST['model'])){
 			}
 			$sql="update  user set status=1 where id=".$db->quote($rs['id']);
 			$db->execute($sql);
-			print json_encode(array("code"=>1,"msg"=>$rs['name']));
+			print json_encode(array("code"=>1,"msg"=>$rs));
 			exit;
 			break;
 		case 'count':
