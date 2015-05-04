@@ -20,7 +20,7 @@
                     if(data.code==1){
                         $("#msg").html("签到成功")
                         $("#msg").css("color","#000");
-                        $(".hello").html("您好，"+data.msg.name+"\n手机号:"+data.msg.mobile+"\n用户类型:"+data.msg.type);
+                        $(".hello").html("您好，"+data.msg.name+"<br/>手机号:"+data.msg.mobile+"<br/>用户类型:"+data.msg.type);
                         $(".tips").show();
                         $("#file").val("");
                         LoadCount();
@@ -47,7 +47,7 @@
         });*/
         $(".search_btn").on("click",function(){
         	
-            window.location.href="view.php?cardnum="+$("#content").val()+"&status="+$("#status").val();
+            window.location.href="view.php?cardnum="+$("#content").val()+"&status="+$("#status").val()+"&type="+$("#type").val();
             
         });
         $(".check_btn").on("click",function(){

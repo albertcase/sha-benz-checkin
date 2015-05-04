@@ -9,7 +9,10 @@ include_once('./config/Pdb.php');
 include_once('./config/Pager.class.php');
 $db = Pdb::getDb();
 $cardnum = isset($_GET['cardnum']) ? $_GET['cardnum'] : "";
-$where = isset($_GET['cardnum']) ? " and (cardnum like '%" . $_GET['cardnum'] . "%' or name like '%" . $_GET['cardnum'] . "%')" : "";
+$mobile = isset($_GET['moible']) ? $_GET['moible'] : "";
+$where = isset($_GET['cardnum']) ? " and (cardnum like '%" . $_GET['cardnum'] . "%' or name like '%" . $_GET['cardnum'] . "%' or mobile like '%" . $_GET['cardnum'] . "%')" : "";
+$type = isset($_GET['type']) ? $_GET['type'] : "";
+$where .= isset($_GET['type']) ? " and type like '%" . $_GET['type'] . "%'" : "";
 $status = isset($_GET['status']) ? $_GET['status'] : "";
 $where .= isset($_GET['status']) ? " and status like '%" . $_GET['status'] . "%'" : "";
 $rowcount = $db->getOne("SELECT count(*) as num FROM user where 1 $where");
@@ -45,6 +48,11 @@ $rs = $db->getAll($sql,true);
 			
             <strong class="total">Total : <?php echo $rowcount;?></strong>
        		<div class="search">
+       			<select id="type" value="<?php echo $type;?>">
+	       			<option value="">选择类型</option>
+	       			<option value="VIP" <?php if($type==='VIP') echo 'selected=selected'?>>VIP用户</option>
+	       			<option value="普通用户" <?php if($type==='普通用户') echo 'selected=selected'?>>普通用户</option>
+       			</select>
        			<select id="status" value="<?php echo $status;?>">
 	       			<option value="">选择状态</option>
 	       			<option value="0" <?php if($status==='0') echo 'selected=selected'?>>未签到</option>
@@ -60,6 +68,8 @@ $rs = $db->getAll($sql,true);
 				<tr role="row">
 					<th>ID</th>
 					<th>NAME</th>
+					<th>MOIBLE</th>
+					<th>TYPE</th>
 					<th>CARD-NUM</th>
 					<th>STATUS</th>
 					<th>CREATE-AT</th>
@@ -70,13 +80,15 @@ $rs = $db->getAll($sql,true);
 				        
 				<?php
 				if(count($rs)==0){
-					echo '<tr  role="row" class="even"><td align="center" colspan=5>暂无数据</td></tr>';
+					echo '<tr role="row" class="even"><td align="center" colspan=7>暂无数据</td></tr>';
 				}else{
 					for($i=0;$i<count($rs);$i++){
 				?>
 					<tr  role="row" class="<?php if($i%2==0) echo 'even'; else echo 'odd';?>">
 					<td align="center"><?php echo $rs[$i]['id']; ?></td>
 					<td align="center"><?php echo $rs[$i]['name']; ?></td>
+					<td align="center"><?php echo $rs[$i]['mobile']; ?></td>
+					<td align="center"><?php echo $rs[$i]['type']; ?></td>
 					<td align="center"><?php echo $rs[$i]['cardnum']; ?></td>
 					<td align="center"><?php if($rs[$i]['status']==1){ echo '<img src="images/clicked.png" width="15px" height="15px"/>'; } else{echo '<img src="images/unclicked.png" width="15px" height="15px"/>';} ?></td>
 					<td align="center"><?php echo $rs[$i]['createtime']; ?></td>
