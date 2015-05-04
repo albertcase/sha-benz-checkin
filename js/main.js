@@ -25,7 +25,7 @@
                         $("#file").val("");
                         LoadCount();
                     }else{
-                        $("#msg").html(data.msg)
+                        $("#msg").html("<br/><br/>"+data.msg);
                         $("#msg").css("color","#000");
                         $(".hello").html('');
                         $(".tips").show();
