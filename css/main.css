@@ -1,5 +1,5 @@
 body{
-	background: #000 url(../images/bg.jpg) no-repeat ;
+	background: #000 url(../images/bg-1.jpg) no-repeat ;
 	background-size: 100%;
 	font-family: 'SimSun';
     
@@ -29,7 +29,7 @@ body{
 	color:#fff;
 	font-size: 18px;
 	text-align: center;
-	height:60px;
+	height:20px;
 
 }
 #file{
@@ -117,11 +117,11 @@ body{
 }
 
 .tips{
-	width:411px;
-	height:174px;
+	width:410px;
+	height:220px;
 	display: block;
 	background:url(../images/tips_bg.jpg) no-repeat;
-	background-size: 90%;
+	background-size: 120% 110%;
 	position: relative;
 	margin:0px auto ;
 	display: none;
@@ -137,8 +137,7 @@ body{
 	color:#000;
 	border: 1px solid #000;
 	width:60px;
-	
-	margin: 15px 0px 0px 155px ;
+	margin: 20px 0px 0px 170px ;
 	
 
 }
@@ -186,4 +185,8 @@ body{
 	margin: 250px auto;
 	
 	
+}
+#msg{
+	height: 80px;
+	line-height: 24px;
 }

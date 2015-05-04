@@ -18,9 +18,9 @@
                 "success":function(data){
                     $(".loading").hide();
                     if(data.code==1){
-                        $("#msg").html("签到成功")
+                        $("#msg").html("签到成功<br/>"+"用户名："+data.msg.name+"<br/>手机号："+data.msg.mobile+"<br/>类型："+data.msg.type);
                         $("#msg").css("color","#000");
-                        $(".hello").html("您好，"+data.msg.name+"<br/>手机号:"+data.msg.mobile+"<br/>用户类型:"+data.msg.type);
+                        $(".hello").html("您好，"+data.msg.name);
                         $(".tips").show();
                         $("#file").val("");
                         LoadCount();
