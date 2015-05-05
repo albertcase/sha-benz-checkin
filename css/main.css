@@ -1,7 +1,13 @@
+@font-face{
+	font-family: myFirstFont;
+	src: url("../font/songti.ttf");
+
+}
+
+
 body{
 	background: #000 url(../images/bg-1.jpg) no-repeat ;
 	background-size: 100%;
-	font-family: 'SimSun';
     
 }
 .info{
@@ -18,22 +24,23 @@ body{
 .info .num{
 	display: inline-block;
 	width:300px;
-	font-family: 'SimSun';
+	font-family: myFirstFont;
 	color:#fff;
 	font-size: 18px;
-	margin-top:120px;
+	margin-top:125px;
 	
 }
 .hello{
-	font-family: 'SimSun';
+	font-family: myFirstFont;
 	color:#fff;
 	font-size: 18px;
 	text-align: center;
 	height:20px;
-	margin-bottom: 18px;
+	margin-bottom: 16px;
 
 }
 #file{
+	font-family: myFirstFont;
 	background:rgba(0,0,0,0.5);
 	width:220px;
 	height:34px;
@@ -127,12 +134,13 @@ body{
 	margin:0px auto ;
 	display: none;
 	text-align: center;
+	font-family: myFirstFont;
 	
 }
 .tips_txt{
 	font-size: 18px;
 	color:#fff;
-	padding: 18px 0 0 10px;
+	padding: 20px 0 0 10px;
 	text-align: left;
 }
 .confirm_btn{
@@ -146,7 +154,7 @@ body{
 	display: inline-block;
 	padding: 4px 0;
 	text-align: center;
-	margin-top: 38px;
+	margin-top: 40px;
 
 	
 
