@@ -40,8 +40,11 @@ if(isset($_POST['model'])){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
 			}
-			$sql="select * from  user where chinese like '%".$cardnum."%' or english like '%".$cardnum."%' limit 5";
+			$sql="select chinese,english from  user where chinese like '%".$cardnum."%' or english like '%".$cardnum."%' limit 5";
 			$rs=$db->getAll($sql,true);
+			for($i=0;$i<count($rs);$i++){
+				$rs['name']=$rs['english'].$rs['chinese'];
+			}
 			print json_encode(array("code"=>1,"msg"=>$rs));
 			exit;
 			break;
