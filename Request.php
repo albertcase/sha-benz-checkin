@@ -19,7 +19,7 @@ if(isset($_POST['model'])){
 				$sql="insert into user set chinese=".$db->quote($cardnum).",type='Guest2015'";
 				$db->execute($sql);
 				$id=$db->lastInsertId;
-				$rs="select * from  user where id=".intval($id);
+				$rs=$db->getRow("select * from  user where id=".intval($id),true);
 				print json_encode(array("code"=>1,"msg"=>$rs));
 				exit;
 			}
