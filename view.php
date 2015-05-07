@@ -10,7 +10,7 @@ include_once('./config/Pager.class.php');
 $db = Pdb::getDb();
 $cardnum = isset($_GET['cardnum']) ? $_GET['cardnum'] : "";
 $mobile = isset($_GET['moible']) ? $_GET['moible'] : "";
-$where = isset($_GET['cardnum']) ? " and (cardnum like '%" . $_GET['cardnum'] . "%' or name like '%" . $_GET['cardnum'] . "%' or mobile like '%" . $_GET['cardnum'] . "%')" : "";
+$where = isset($_GET['cardnum']) ? " and (chinese like '%" . $_GET['cardnum'] . "%' or english like '%" . $_GET['cardnum'] . "%')" : "";
 $type = isset($_GET['type']) ? $_GET['type'] : "";
 $where .= isset($_GET['type']) ? " and type like '%" . $_GET['type'] . "%'" : "";
 $status = isset($_GET['status']) ? $_GET['status'] : "";
@@ -26,6 +26,8 @@ if(isset($_GET['page'])){
 $page = new Pager(array("nowindex" => $nowindex, "total" => $rowcount, "perpage" => 30, "style" => "page_break"));
 $sql = "SELECT * FROM user where 1 $where  ORDER BY id  LIMIT $page->offset,30";
 $rs = $db->getAll($sql,true);
+
+$typelist=$db->getAll("select distinct(type) as typename from user group by type",true);
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,8 +52,14 @@ $rs = $db->getAll($sql,true);
        		<div class="search">
        			<select id="type" value="<?php echo $type;?>">
 	       			<option value="">选择类型</option>
-	       			<option value="VIP" <?php if($type==='VIP') echo 'selected=selected'?>>VIP用户</option>
-	       			<option value="普通用户" <?php if($type==='普通用户') echo 'selected=selected'?>>普通用户</option>
+	       			<?php
+	       			     for($i=0;$i<count($typelist);$i++){
+	       			     	 if($type==$typelist[$i]['typename'])
+	       			     	 	echo '<option value="'.$typelist[$i]['typename'].'" selected=selected>'.$typelist[$i]['typename'].'</option>';	
+	       			     	 else
+	       			     	 	echo '<option value="'.$typelist[$i]['typename'].'">'.$typelist[$i]['typename'].'</option>';	
+	       			     }
+	       			?>
        			</select>
        			<select id="status" value="<?php echo $status;?>">
 	       			<option value="">选择状态</option>
@@ -67,10 +75,11 @@ $rs = $db->getAll($sql,true);
 				<thead style="color:#fff">
 				<tr role="row">
 					<th>ID</th>
-					<th>NAME</th>
-					<th>MOIBLE</th>
+					<th>CHINESE NAME</th>
+					<th>ENGLISH NAME</th>
 					<th>TYPE</th>
-					<th>CARD-NUM</th>
+					<th>COMPANY</th>
+					<th>TITLE</th>
 					<th>STATUS</th>
 					<th>CREATE-AT</th>
 				</tr>
@@ -86,10 +95,11 @@ $rs = $db->getAll($sql,true);
 				?>
 					<tr  role="row" class="<?php if($i%2==0) echo 'even'; else echo 'odd';?>">
 					<td align="center"><?php echo $rs[$i]['id']; ?></td>
-					<td align="center"><?php echo $rs[$i]['name']; ?></td>
-					<td align="center"><?php echo $rs[$i]['mobile']; ?></td>
+					<td align="center"><?php echo $rs[$i]['chinese']; ?></td>
+					<td align="center"><?php echo $rs[$i]['english']; ?></td>
 					<td align="center"><?php echo $rs[$i]['type']; ?></td>
-					<td align="center"><?php echo $rs[$i]['cardnum']; ?></td>
+					<td align="center"><?php echo $rs[$i]['company']; ?></td>
+					<td align="center"><?php echo $rs[$i]['title']; ?></td>
 					<td align="center"><?php if($rs[$i]['status']==1){ echo '<img src="images/clicked.png" width="15px" height="15px"/>'; } else{echo '<img src="images/unclicked.png" width="15px" height="15px"/>';} ?></td>
 					<td align="center"><?php echo $rs[$i]['createtime']; ?></td>
 					</tr>

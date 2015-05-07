@@ -13,7 +13,7 @@ if(isset($_POST['model'])){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
 			}
-			$sql="select * from  user where cardnum=".$db->quote($cardnum)." or mobile =".$db->quote($cardnum);
+			$sql="select * from  user where chinese=".$db->quote($cardnum)." or english =".$db->quote($cardnum);
 			$rs=$db->getRow($sql,true);
 			if(!$rs){
 				print json_encode(array("code"=>3,"msg"=>"找不到该用户"));
@@ -36,11 +36,8 @@ if(isset($_POST['model'])){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
 			}
-			$sql="select * from  user where name like ".$db->quote('%'.$cardnum.'%');
+			$sql="select * from  user where name like '%".$cardnum."%'";
 			$rs=$db->getAll($sql,true);
-				print json_encode(array("code"=>3,"msg"=>"找不到该用户"));
-				exit;
-			}
 			print json_encode(array("code"=>1,"msg"=>$rs));
 			exit;
 			break;
