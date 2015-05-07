@@ -16,7 +16,7 @@ if(isset($_POST['model'])){
 			$sql="select * from  user where chinese=".$db->quote($cardnum)." or english =".$db->quote($cardnum);
 			$rs=$db->getRow($sql,true);
 			if(!$rs){
-				$sql="insert into user set chinese=".$db->quote($cardnum).",type='Guest2015'";
+				$sql="insert into user set chinese=".$db->quote($cardnum).",type='Guest2015',status=1";
 				$db->execute($sql);
 				$id=$db->lastInsertId;
 				$rs=$db->getRow("select * from  user where id=".intval($id),true);
