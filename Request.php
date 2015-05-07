@@ -57,17 +57,17 @@ if(isset($_POST['model'])){
 			exit;
 			break;
 		case 'reset':
-			$sql="update  user set status=0";
+			$sql="update  user set status=0,createtime='0000-00-00 00:00:00'";
 			$db->execute($sql);
 			$sql="delete from  user where type='Guest2015'";
 			$db->execute($sql);
-			print json_encode(array("code"=>1,"msg"=>'清空完成'));
+			$rs=$db->getOne("select count(*) from user");
+			print json_encode(array("code"=>1,"msg"=>$rs));
 			exit;
 			break;
 		case 'test':
-			for($i=20150001;$i<=20150680;$i++){
-				echo "insert into user(cardnum,status,createtime) values('".$i."',0,'0000-00-00 00:00:00');<br>";
-			}
+			$sql="delete from  user where chinese='Chinese Name'";
+			$db->execute($sql);
 			break;
 		default:
 			# code...
