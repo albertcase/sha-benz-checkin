@@ -22,12 +22,12 @@ function submitForm(){
     <div class="info">
     	<p class="num">已签到人数:<span id="count">2121</span></p>
         <input type="text" name="file" id="file" placeholder="在此输入编号" value="" onchange=""/>
+
+        <div class="codeInput_con">
+        	<ul></ul>
+        </div>
          
-        <select class="vistor">
-        	<option value="1">ALL</option>
-        	<option value="2">al</option> 
-        	<option value="3">ll</option>   
-        </select> 
+
     	
         <p class="hello"></p>
         <img src="images/btn_info.jpg" class="submit_btn"  >
@@ -46,6 +46,47 @@ function submitForm(){
 	
 	<div class="loading">
 		<img src="images/loading.gif" />
-	</div>   
+	</div>  
+
+
+<script type="text/javascript">
+function searchName(searchName){
+	var searchListHtml = "";
+	if(searchName=="")return;
+	$.ajax({
+		type:"POST",
+		url:"Request.php?model=searchname&cardnum="+searchName,
+		dataType:"json",
+		success:function(data){
+			searchListHtml = $.map(data.msg,function(v){
+				return '<li>'+v.name+'</li>'
+			}).join("");
+			if(searchListHtml=="")return;
+			$(".codeInput_con ul").show().html(searchListHtml);
+			$(".codeInput_con li").click(function(){
+				$("#file").val($(this).text());
+				$(".codeInput_con").hide();
+			})
+		}
+	})
+}
+
+
+$("#file").focus(function(){
+	$(".codeInput_con").show();
+}).blur(function(){
+	$(".codeInput_con").fadeOut();
+})
+
+$("#file").keyup(function(){
+	$(".codeInput_con ul").hide().empty();
+	searchName($(this).val());
+})
+
+
+</script>
+
+
+
 </body>
 </html>
