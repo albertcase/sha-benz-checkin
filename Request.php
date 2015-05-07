@@ -16,7 +16,11 @@ if(isset($_POST['model'])){
 			$sql="select * from  user where chinese=".$db->quote($cardnum)." or english =".$db->quote($cardnum);
 			$rs=$db->getRow($sql,true);
 			if(!$rs){
-				print json_encode(array("code"=>3,"msg"=>"找不到该用户"));
+				$sql="insert into user set chinese=".$db->quote($cardnum).",type='Guest2015'";
+				$db->execute($sql);
+				$id=$db->lastInsertId;
+				$rs="select * from  user where id=".intval($id);
+				print json_encode(array("code"=>1,"msg"=>$rs));
 				exit;
 			}
 			if($rs['status']==1){
