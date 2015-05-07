@@ -21,13 +21,13 @@ function submitForm(){
 <body onkeyup="submitForm()">
     <div class="info">
     	<p class="num">已签到人数:<span id="count">2121</span></p>
-        <input type="text" name="file" id="file" placeholder="在此输入编号" value="" onchange=""/>
+        <input type="text" id="codeInput" name="file" id="file" placeholder="在此输入编号" value="" onchange=""/>
+
+        <ul class="codeInput_con">
+        	<li>132345456</li>
+        </ul>
          
-        <select class="vistor">
-        	<option value="1">ALL</option>
-        	<option value="2">al</option> 
-        	<option value="3">ll</option>   
-        </select> 
+
     	
         <p class="hello"></p>
         <img src="images/btn_info.jpg" class="submit_btn"  >
@@ -46,6 +46,28 @@ function submitForm(){
 	
 	<div class="loading">
 		<img src="images/loading.gif" />
-	</div>   
+	</div>  
+
+
+<script type="text/javascript">
+	$.ajax({
+		type:"POST",
+		url:"Request.php?model=searchname&cardnum="+$("file").val(),
+		dataType:"json",
+		success:function(data){
+			console.log(data);
+		}
+	})
+
+
+	$("#codeInput").focus(function(){
+		$(".codeInput_con").show();
+	}).blur(function(){
+		$(".codeInput_con").hide();
+	})
+</script>
+
+
+
 </body>
 </html>
