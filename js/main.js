@@ -58,6 +58,10 @@
         $(".confirm_btn").on("click",function(){
             $(".tips").hide();
         })
+        $(".vistor").on("change",function(){
+            
+            $("#file").val($(this).val());
+        })
         
   
     })

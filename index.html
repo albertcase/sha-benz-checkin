@@ -21,7 +21,14 @@ function submitForm(){
 <body onkeyup="submitForm()">
     <div class="info">
     	<p class="num">已签到人数:<span id="count">2121</span></p>
-        <input type="text" name="file" id="file" placeholder="在此输入编号" value=""/>
+        <input type="text" name="file" id="file" placeholder="在此输入编号" value="" onchange=""/>
+         
+        <select class="vistor">
+        	<option value="1">ALL</option>
+        	<option value="2">al</option> 
+        	<option value="3">ll</option>   
+        </select> 
+    	
         <p class="hello"></p>
         <img src="images/btn_info.jpg" class="submit_btn"  >
         <img src="images/btn_check.jpg" class="check_btn" >
