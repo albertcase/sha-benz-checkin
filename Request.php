@@ -57,8 +57,9 @@ if(isset($_POST['model'])){
 			exit;
 			break;
 		case 'reset':
-		    exit;
 			$sql="update  user set status=0";
+			$db->execute($sql);
+			$sql="delete from  user where type='Guest2015'";
 			$db->execute($sql);
 			print json_encode(array("code"=>1,"msg"=>'清空完成'));
 			exit;
