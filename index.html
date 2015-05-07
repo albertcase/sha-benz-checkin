@@ -23,7 +23,9 @@ function submitForm(){
     	<p class="num">已签到人数:<span id="count">2121</span></p>
         <input type="text" name="file" id="file" placeholder="在此输入编号" value="" onchange=""/>
 
-        <ul class="codeInput_con"></ul>
+        <div class="codeInput_con">
+        	<ul></ul>
+        </div>
          
 
     	
@@ -57,25 +59,27 @@ function searchName(searchName){
 		dataType:"json",
 		success:function(data){
 			searchListHtml = $.map(data.msg,function(v){
-				return '<li>'+v.chinese+'</li>'
+				return '<li>'+v.name+'</li>'
 			}).join("");
-			$(".codeInput_con").html(searchListHtml);
+			if(searchListHtml=="")return;
+			$(".codeInput_con ul").show().html(searchListHtml);
 			$(".codeInput_con li").click(function(){
 				$("#file").val($(this).text());
+				$(".codeInput_con").hide();
 			})
 		}
 	})
 }
 
-searchName("");
 
 $("#file").focus(function(){
 	$(".codeInput_con").show();
 }).blur(function(){
-	$(".codeInput_con").hide();
+	$(".codeInput_con").fadeOut();
 })
 
-$("#file").keydown(function(){
+$("#file").keyup(function(){
+	$(".codeInput_con ul").hide().empty();
 	searchName($(this).val());
 })
 
